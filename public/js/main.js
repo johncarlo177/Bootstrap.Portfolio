@@ -16,6 +16,18 @@
     scrollProperty: 'scroll'
   });
 
+  	const downloadBtn = document.getElementById('downloadCvBtn');
+
+	downloadBtn.addEventListener('click', function(e) {
+		e.preventDefault(); // prevent default link behavior
+		const link = document.createElement('a');
+		link.href = 'resume/cv.pdf'; // path to your PDF file
+		link.download = 'John_Carlo_CV.pdf'; // filename when downloaded
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	});
+
 
 	var fullHeight = function() {
 
